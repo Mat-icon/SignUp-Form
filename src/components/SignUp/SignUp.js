@@ -6,6 +6,8 @@ function SignUp() {
     email : '',
  })
 
+ const[showPassword, setShowPassword] = useState(false)
+
   function handleClick(event){
     const {name, value} = event.target
     setForm(prevForm => {
@@ -14,6 +16,10 @@ function SignUp() {
              [name] : value
         }
     })
+}
+
+function handleChange(){
+  setShowPassword(!showPassword)
 }
 
   function handleSubmit(event){
@@ -33,13 +39,17 @@ function SignUp() {
              value={form.email}
             />
           <input className="sign-input"
-            type="password"
+            type={showPassword === true ? 'text' : 'password'}
             placeholder="password"
             name="password"
             value={form.password}
             required
             onChange={handleClick}
           />
+          <label>
+            Show Password
+            <input type='checkbox' onClick={handleChange}/>
+          </label>
           <button>Click me</button>
         </form>
       </div>
