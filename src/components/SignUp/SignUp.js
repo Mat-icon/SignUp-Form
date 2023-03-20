@@ -36,7 +36,8 @@ function handleChange(){
             onChange={handleClick}
             type='email'
             name='email'
-             value={form.email}
+            value={form.email}
+            required
             />
           <input className="sign-input"
             type={showPassword === true ? 'text' : 'password'}
