@@ -29,6 +29,7 @@ function handleChange(){
   return (
     <div className="signup">
       <div className="sign-card">
+        <h1>Sign up</h1>
         <form onSubmit={handleSubmit}>
         <input 
             className="sign-input"
